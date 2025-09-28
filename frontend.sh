@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ./common.sh
-
+app_name="nginx"
 nginx_setup
 
 rm -rf /usr/share/nginx/html/*  &>> $LOG_FILE
