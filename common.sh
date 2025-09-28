@@ -77,3 +77,14 @@ systemd_setup(){
     systemctl start $app_name
     VALIDATE $? " start service"
 }
+
+nginx_setup(){
+    dnf module disable nginx -y &>> $LOG_FILE
+    VALIDATE $? "Disable nginx"
+
+    dnf module enable nginx:1.24 -y &>> $LOG_FILE
+    VALIDATE $? "Enable nginx 1.24"
+
+    dnf install nginx -y &>> $LOG_FILE
+    VALIDATE $? "Install nginx"
+}
