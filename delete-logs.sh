@@ -20,7 +20,7 @@ echo " Script started executing at : $(date)"
 
 SOURCE_DIR="/var/log/shell-practice"
 
-if [ ! -d $SOURCE_DIR]; then
+if [ ! -d $SOURCE_DIR ]; then
     echo "ERROR:: source directory not available"
 fi
 
