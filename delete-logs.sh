@@ -18,13 +18,14 @@ mkdir -p $LOG_FOLDER
 
 echo " Script started executing at : $(date)"
 
-SOURCE_DIR="/var/log/shell-practice"
+SOURCE_DIR="/home/ec2-user/apps-log"
 
 if [ ! -d $SOURCE_DIR ]; then
     echo "ERROR:: source directory not available"
+    exit 1
 fi
 
-FIND_FILES=$(find . -name "*.log" -type f -mtime +14)
+FIND_FILES=$( find $SOURCE_DIR -name "*.log" -type f -mtime +14 )
 
 while IFS= read -r line
 do
