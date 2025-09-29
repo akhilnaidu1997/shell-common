@@ -26,7 +26,7 @@ fi
 
 FIND_FILES=$(find . -name "*.log" -type f -mtime +14)
 
-while IFS=read -r line
+while IFS= read -r line
 do
     echo "Deleting lines: $line"
 done
